@@ -1,0 +1,7 @@
+2023-11-22 23:04:27.900 +07:00 [ERR] XX000: password authentication failed for user 'default'
+2023-11-22 23:05:30.196 +07:00 [ERR] XX000: password authentication failed for user 'default'
+2023-11-22 23:05:47.040 +07:00 [ERR] XX000: password authentication failed for user 'default'
+2023-11-22 23:06:31.286 +07:00 [ERR] XX000: password authentication failed for user 'default'
+2023-11-22 23:11:22.636 +07:00 [ERR] XX000: password authentication failed for user 'default'
+2023-11-22 23:12:09.471 +07:00 [ERR] XX000: database "vercel" does not exist
+2023-11-22 23:13:24.027 +07:00 [INF] Connected to Server 22/11/2023 11:13:24 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
