@@ -2,11 +2,13 @@ using chat_service_se357.Models;
 using Microsoft.EntityFrameworkCore;
 using Serilog.Sinks.SystemConsole.Themes;
 using Serilog;
+using chat_service_se357.APIs;
 
 namespace chat_service_se357
 {
     public class Program
     {
+        public static MyUser api_user = new MyUser();
         public static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()

@@ -21,3 +21,9 @@
 2023-11-23 00:23:49.051 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
 2023-11-23 00:23:52.369 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
 2023-11-23 00:23:59.389 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-23 08:51:11.419 +07:00 [INF] Connected to Server 23/11/2023 8:51:11 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-23 08:53:29.092 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-23 08:53:35.633 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-23 08:53:47.799 +07:00 [INF] Connected to Server 23/11/2023 8:53:47 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-23 08:55:01.775 +07:00 [INF] Connected to Server 23/11/2023 8:55:01 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-23 08:57:34.119 +07:00 [INF] Connected to Server 23/11/2023 8:57:34 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 

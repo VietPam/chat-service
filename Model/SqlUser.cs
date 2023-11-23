@@ -9,12 +9,12 @@ namespace chat_service_se357.Models
         [Key]
         public long ID { get; set; }
         public string name { get; set; } = "";
-        public string code { get; set; }  
+        public string code { get; set; }  // từ ID của user bên ecommerce migrate qua
 
 
         //public string idHub { get; set; } = "";
 
 
-        public SqlConversation conversations { get; set; } // sau này serialize thành string để lưu cho dễ, tối ưu hơn link
+        public List<SqlConversation> conversations { get; set; } 
     }
 }

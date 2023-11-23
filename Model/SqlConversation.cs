@@ -10,6 +10,7 @@ namespace chat_service_se357.Models
         public long ID { get; set; }
         public string clientCode { get; set; }
         public string shopCode { get; set; }
-        public SqlMessage messages { get; set; }
+        public SqlMessage messages { get; set; }// sau này serialize thành string để lưu cho dễ, tối ưu hơn link
+        //hoặc không cần cũng được, vì có bao nhiêu messages đâu
     }
 }
