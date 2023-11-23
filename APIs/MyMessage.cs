@@ -18,20 +18,14 @@ namespace chat_service_se357.APIs
             #endregion
             using (DataContext context = new DataContext())
             {
-
-
                 #region indentify who is shop, who is client 
                 // xem thử thằng gửi là thằng shop hay thằng client
-                SqlUser? shop = context.users!.Where(s => s.is_shop && s.code == senderCode).FirstOrDefault();
-                SqlUser? client = new SqlUser();
+                SqlUser? shop = context.users!.Where(s => s.is_shop==true && s.code == senderCode).FirstOrDefault();
+                SqlUser? client= context.users!.Where(s => s.is_shop == false && s.code == receiverCode).FirstOrDefault();
                 if (shop == null)
                 {
                     shop = context.users!.Where(s => s.is_shop && s.code == receiverCode).FirstOrDefault();
                     client = context.users!.Where(s => s.is_shop == false && s.code == senderCode).FirstOrDefault();
-                }
-                else
-                {
-                    client = context.users!.Where(s => s.is_shop == false && s.code == receiverCode).FirstOrDefault();
                 }
                 #region check if both is client/shop
                 if (client == null || shop == null)
@@ -46,12 +40,14 @@ namespace chat_service_se357.APIs
                 Log.Information("ID client: {0}, name:{1}", client.ID, client.name);
                 #endregion
 
+
                 #region check existed Conversation ? then create new Conversation
                 // tìm xem có conversation của sender và receiver chưa, nếu chưa thì tạo mới conversation
-                SqlConversation? sqlConversation = context.conversations!.Where(s => s.clientCode == client.code && s.shopCode == shop.code).Include(s => s.messages).FirstOrDefault();
+                SqlConversation? sqlConversation = context.conversations!.Where(s => s.clientCode == client.code && s.shopCode == shop.code).FirstOrDefault();
                 if (sqlConversation == null)
                 {
-                    sqlConversation = await Program.api_conversation.createConversation(client.code, shop.code);
+                    await Program.api_conversation.createConversation(client.code, shop.code);
+                    sqlConversation = context.conversations!.Where(s => s.clientCode == client.code && s.shopCode == shop.code).FirstOrDefault();
                 }
                 #endregion
 
@@ -59,11 +55,12 @@ namespace chat_service_se357.APIs
                 //ròi tạo mới message gán vào conversation đó
                 SqlMessage message = new SqlMessage();
                 message.ID = DateTime.Now.Ticks;
-                message.clientCode = client.code;
-                message.shopCode = shop.code;
+                message.senderCode = senderCode;
+                message.receiverCode = receiverCode;
                 message.message = msg;
+                message.conversation = sqlConversation;
                 context.messages.Add(message);
-                sqlConversation.messages.Add(message);
+                //sqlConversation.messages.Add(message);
                 await context.SaveChangesAsync();
 
                 return true;

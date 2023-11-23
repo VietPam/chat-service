@@ -8,10 +8,12 @@ namespace chat_service_se357.Models
     {
         [Key]
         public long ID { get; set; }
-        public string clientCode { get; set; }
-        public string shopCode { get; set; }
+        public string senderCode { get; set; }
+        public string receiverCode { get; set; }
         //public DateTime time { get; set; }
         public string message { get; set; } = "";
+
+        public SqlConversation conversation { get; set; }
 
     }
 }
