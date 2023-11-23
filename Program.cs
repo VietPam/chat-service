@@ -9,6 +9,8 @@ namespace chat_service_se357
     public class Program
     {
         public static MyUser api_user = new MyUser();
+        public static MyConversation api_conversation = new MyConversation();
+        public static MyMessage api_message = new MyMessage();
         public static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using chat_service_se357.Models;
@@ -11,9 +12,10 @@ using chat_service_se357.Models;
 namespace chat_service_se357.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231123021917_1.0.2")]
+    partial class _102
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,6 +39,9 @@ namespace chat_service_se357.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<long>("messagesID")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("shopCode")
                         .IsRequired()
                         .HasColumnType("text");
@@ -45,7 +50,9 @@ namespace chat_service_se357.Migrations
 
                     b.HasIndex("SqlUserID");
 
-                    b.ToTable("tb_conversation", (string)null);
+                    b.HasIndex("messagesID");
+
+                    b.ToTable("tb_conversation");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlMessage", b =>
@@ -55,9 +62,6 @@ namespace chat_service_se357.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ID"));
-
-                    b.Property<long?>("SqlConversationID")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("clientCode")
                         .IsRequired()
@@ -73,9 +77,7 @@ namespace chat_service_se357.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("SqlConversationID");
-
-                    b.ToTable("tb_message", (string)null);
+                    b.ToTable("tb_message");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlUser", b =>
@@ -99,7 +101,7 @@ namespace chat_service_se357.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("tb_user", (string)null);
+                    b.ToTable("tb_user");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlConversation", b =>
@@ -107,17 +109,13 @@ namespace chat_service_se357.Migrations
                     b.HasOne("chat_service_se357.Models.SqlUser", null)
                         .WithMany("conversations")
                         .HasForeignKey("SqlUserID");
-                });
 
-            modelBuilder.Entity("chat_service_se357.Models.SqlMessage", b =>
-                {
-                    b.HasOne("chat_service_se357.Models.SqlConversation", null)
-                        .WithMany("messages")
-                        .HasForeignKey("SqlConversationID");
-                });
+                    b.HasOne("chat_service_se357.Models.SqlMessage", "messages")
+                        .WithMany()
+                        .HasForeignKey("messagesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("chat_service_se357.Models.SqlConversation", b =>
-                {
                     b.Navigation("messages");
                 });
 

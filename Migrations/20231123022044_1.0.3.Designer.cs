@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using chat_service_se357.Models;
@@ -11,9 +12,10 @@ using chat_service_se357.Models;
 namespace chat_service_se357.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231123022044_1.0.3")]
+    partial class _103
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +47,7 @@ namespace chat_service_se357.Migrations
 
                     b.HasIndex("SqlUserID");
 
-                    b.ToTable("tb_conversation", (string)null);
+                    b.ToTable("tb_conversation");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlMessage", b =>
@@ -75,7 +77,7 @@ namespace chat_service_se357.Migrations
 
                     b.HasIndex("SqlConversationID");
 
-                    b.ToTable("tb_message", (string)null);
+                    b.ToTable("tb_message");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlUser", b =>
@@ -99,7 +101,7 @@ namespace chat_service_se357.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("tb_user", (string)null);
+                    b.ToTable("tb_user");
                 });
 
             modelBuilder.Entity("chat_service_se357.Models.SqlConversation", b =>

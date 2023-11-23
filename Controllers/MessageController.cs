@@ -4,13 +4,13 @@ namespace chat_service_se357.Controllers
 {
     [Route("/api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class MessageController : ControllerBase
     {
         [HttpPost]
-        [Route("createUser")]
-        public async Task<IActionResult> createUser(string code, string name, bool is_shop)
+        [Route("createMessage")]
+        public async Task<IActionResult> createMessageAsync(string senderCode, string receiverCode, string msg)
         {
-            bool tmp = await Program.api_user.createUserAsync(code, name, is_shop);
+            bool tmp = await Program.api_message.createMessageAsync(senderCode, receiverCode, msg);
             if (tmp)
             {
                 return Ok();

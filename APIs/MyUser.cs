@@ -8,7 +8,7 @@ namespace chat_service_se357.APIs
     {
         public MyUser() { }
 
-        public async Task<bool> createUserAsync(string code, string name)
+        public async Task<bool> createUserAsync(string code, string name, bool is_shop)
         {
             if( string.IsNullOrEmpty(code) || string.IsNullOrEmpty(name))
             {
@@ -26,10 +26,12 @@ namespace chat_service_se357.APIs
                 sqlUser2.ID = DateTime.Now.Ticks;
                 sqlUser2.code= code;
                 sqlUser2.name = name;
+                sqlUser2.is_shop = is_shop;
                 context.users!.Add(sqlUser2);
                 await context.SaveChangesAsync();
                 return true;
             }
         }
+
     }
 }
