@@ -25,5 +25,24 @@ namespace chat_service_se357.Controllers
 
             }
         }
+
+        [HttpGet]
+        [Route("/getListMsgInConvesation")]
+        public async Task<IActionResult> getListMsgInConvesation(long  conversationID)
+        {
+
+            List<MsgDTO> messages = await Program.api_conversation.getListMsgInConvesation(conversationID);
+            if (messages != new List<MsgDTO>())
+            {
+                return Ok(messages);
+
+            }
+            else
+            {
+                return BadRequest();
+
+            }
+        }
+
     }
 }

@@ -69,3 +69,6 @@
 2023-11-24 16:16:09.929 +07:00 [INF] ID shop: 638364392711919173, name: shop
 2023-11-24 16:16:09.929 +07:00 [INF] ID client: 638364202654289944, name:client1
 2023-11-24 16:16:10.236 +07:00 [INF] Create new conversation
+2023-11-24 17:07:23.404 +07:00 [INF] Connected to Server 24/11/2023 5:07:23 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 17:08:09.525 +07:00 [INF] Connected to Server 24/11/2023 5:08:09 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 17:08:50.301 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.

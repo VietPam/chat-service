@@ -13,6 +13,7 @@ namespace chat_service_se357.APIs
             public string msg { get; set; }
             public string senderCode { get; set; }
             public string receiverCode { get; set; }
+            public long time { get; set; } = 0;
         }
         public class ConversationDTOResponse
         {
@@ -127,6 +128,33 @@ namespace chat_service_se357.APIs
                 return new List<ConversationDTOResponse>();
 
             }
+        }
+        public async Task<List<MsgDTO>> getListMsgInConvesation(long conversationID)
+        {
+            List<MsgDTO> nullResponse = new List<MsgDTO>();
+            if (conversationID == null)
+            {
+                return nullResponse;
+            }
+            using (DataContext context = new DataContext())
+            {
+                SqlConversation? conversation = context.conversations!.Include(s => s.messages).Where(s => s.ID == conversationID).FirstOrDefault();
+                List<SqlMessage> messages = conversation.messages;
+                List<MsgDTO> response = new List<MsgDTO>();
+                foreach (SqlMessage message in messages)
+                {
+                    MsgDTO msg = new MsgDTO();
+                    msg.time = message.time;
+                    msg.msg = message.message;
+                    msg.senderCode = message.senderCode;
+                    msg.receiverCode = message.receiverCode;
+                    response.Add(msg);
+                }
+                response.OrderBy(s => s.time);
+                return response;
+            }
+
+            return nullResponse;
         }
     }
 }

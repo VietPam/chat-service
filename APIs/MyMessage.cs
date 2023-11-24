@@ -59,6 +59,7 @@ namespace chat_service_se357.APIs
                 message.receiverCode = receiverCode;
                 message.message = msg;
                 message.conversations = sqlConversation;
+                message.time = DateTime.Now.Ticks;
                 sqlConversation.last_change = DateTime.Now.Ticks;
                 context.messages.Add(message);
                 //sqlConversation.messages.Add(message);

@@ -10,6 +10,7 @@ namespace chat_service_se357.Models
         public long ID { get; set; }
         public string senderCode { get; set; }
         public string receiverCode { get; set; }
+        public long time { get; set; } = 0;
         //public DateTime time { get; set; }
         public string message { get; set; } = "";
 
