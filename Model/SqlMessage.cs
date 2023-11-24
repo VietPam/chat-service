@@ -13,7 +13,7 @@ namespace chat_service_se357.Models
         //public DateTime time { get; set; }
         public string message { get; set; } = "";
 
-        public SqlConversation conversation { get; set; }
+        public SqlConversation conversations { get; set; }
 
     }
 }

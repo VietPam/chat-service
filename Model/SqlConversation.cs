@@ -12,7 +12,8 @@ namespace chat_service_se357.Models
         public string shopCode { get; set; }
         //public List<SqlMessage> messages { get; set; }// sau này serialize thành string để lưu cho dễ, tối ưu hơn link
         //hoặc không cần cũng được, vì có bao nhiêu messages đâu
-        //public SqlUser user { get; set; } đéo dùng quan hệ nữa đkm
+        public List<SqlUser>? users { get; set; } = new List<SqlUser>();//đéo dùng quan hệ nữa đkm
         //public List<SqlUser> users { get; set; }
+        public List<SqlMessage> messages { get; set; } = new List<SqlMessage>();
     }
 }

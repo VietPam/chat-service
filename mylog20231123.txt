@@ -139,3 +139,4 @@
 2023-11-23 16:52:47.278 +07:00 [INF] Create new conversation
 2023-11-23 16:53:24.344 +07:00 [INF] ID shop: 638363551319947116, name: shop1
 2023-11-23 16:53:24.344 +07:00 [INF] ID client: 638363551151231255, name:customer1
+2023-11-23 18:55:37.171 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.

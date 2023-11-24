@@ -21,7 +21,7 @@ namespace chat_service_se357.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<SqlUser>().HasMany<SqlConversation>(s => s.conversations).WithMany(s => s.users);
+            modelBuilder.Entity<SqlUser>().HasMany<SqlConversation>(s => s.conversations).WithMany(s => s.users);
         }
     }
 }

@@ -1,0 +1,30 @@
+2023-11-24 08:12:33.760 +07:00 [INF] Connected to Server 24/11/2023 8:12:33 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:27:56.077 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:28:10.923 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:32:44.608 +07:00 [INF] Connected to Server 24/11/2023 8:32:44 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:36:08.548 +07:00 [INF] Connected to Server 24/11/2023 8:36:08 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:38:23.872 +07:00 [INF] ID shop: 638363523261080878, name: customer
+2023-11-24 08:38:24.683 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:40:11.873 +07:00 [INF] Connected to Server 24/11/2023 8:40:11 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:41:54.208 +07:00 [INF] ID shop: 638364120776673750, name: shop
+2023-11-24 08:42:00.783 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:42:18.257 +07:00 [INF] Create new conversation
+2023-11-24 08:45:46.456 +07:00 [INF] Connected to Server 24/11/2023 8:45:46 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:45:59.127 +07:00 [INF] ID shop: 638364120776673750, name: shop
+2023-11-24 08:46:03.888 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:47:04.231 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:47:42.283 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:48:11.783 +07:00 [INF] Connected to Server 24/11/2023 8:48:11 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:48:20.639 +07:00 [INF] ID shop: 638364120776673750, name: shop
+2023-11-24 08:48:25.406 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:50:47.166 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:50:51.331 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-24 08:51:00.357 +07:00 [INF] Connected to Server 24/11/2023 8:51:00 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-24 08:53:22.977 +07:00 [INF] ID shop: 638364120776673750, name: shop
+2023-11-24 08:53:27.858 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:53:32.903 +07:00 [INF] Create new conversation
+2023-11-24 08:56:06.202 +07:00 [INF] ID shop: 638364129494773632, name: shop
+2023-11-24 08:56:06.202 +07:00 [INF] ID client: 638363523116114800, name:client
+2023-11-24 08:56:06.559 +07:00 [INF] Create new conversation
+2023-11-24 09:24:24.308 +07:00 [INF] ID shop: 638364129494773632, name: shop
+2023-11-24 09:24:24.308 +07:00 [INF] ID client: 638363523116114800, name:client

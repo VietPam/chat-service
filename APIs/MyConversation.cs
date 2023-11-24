@@ -26,16 +26,20 @@ namespace chat_service_se357.APIs
                 SqlUser? sqlShop = context.users!.Where(s => s.code == shopCode).FirstOrDefault();
                 #endregion
 
-                SqlConversation? conversation = context.conversations!.Where(s => s.clientCode == clientCode && s.shopCode == shopCode).FirstOrDefault();
+                SqlConversation? conversation = context.conversations!.Where(s => s.clientCode == clientCode && s.shopCode == shopCode).Include(s=>s.users).FirstOrDefault();
                 if (conversation == null)
                 {
                     SqlConversation tmp = new SqlConversation();
                     tmp.ID = DateTime.Now.Ticks;
                     tmp.clientCode = clientCode;
                     tmp.shopCode = shopCode;
+
+                    // thêm conversation vào user
+                    tmp.users.Add(sqlClient);
+                    tmp.users.Add(sqlShop);
                     context.conversations!.Add(tmp);
-                    Log.Information("Create new conversation");
                     await context.SaveChangesAsync();
+                    Log.Information("Create new conversation");
                     return true;
                 }
             }
