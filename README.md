@@ -7,3 +7,9 @@
 
 
  Lưu ý: chỉ cho phép shop và client nhắn tin với nhau
+
+
+ -giờ sửa lại cái DTO response của getListConversation, trả về tên conversation là tên của shop/client mình đang nhắn tin
+ trả về thêm cái tin nhắn cuối cùng của conversation
+
+ - ròi thêm cái time cho message
