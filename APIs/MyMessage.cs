@@ -20,7 +20,7 @@ namespace chat_service_se357.APIs
             {
                 #region indentify who is shop, who is client 
                 // xem thử thằng gửi là thằng shop hay thằng client
-                SqlUser? shop = context.users!.Where(s => s.is_shop==true && s.code == senderCode).FirstOrDefault();
+                SqlUser? shop = context.users!.Where(s => s.is_shop && s.code == senderCode).FirstOrDefault();
                 SqlUser? client= context.users!.Where(s => s.is_shop == false && s.code == receiverCode).FirstOrDefault();
                 if (shop == null)
                 {
@@ -59,6 +59,7 @@ namespace chat_service_se357.APIs
                 message.receiverCode = receiverCode;
                 message.message = msg;
                 message.conversations = sqlConversation;
+                sqlConversation.last_change = DateTime.Now.Ticks;
                 context.messages.Add(message);
                 //sqlConversation.messages.Add(message);
                 await context.SaveChangesAsync();

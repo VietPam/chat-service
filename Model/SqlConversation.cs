@@ -15,5 +15,7 @@ namespace chat_service_se357.Models
         public List<SqlUser>? users { get; set; } = new List<SqlUser>();//đéo dùng quan hệ nữa đkm
         //public List<SqlUser> users { get; set; }
         public List<SqlMessage> messages { get; set; } = new List<SqlMessage>();
+
+        public long last_change { get; set; }= DateTime.Now.Ticks;
     }
 }

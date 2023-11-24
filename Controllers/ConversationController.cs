@@ -1,5 +1,7 @@
 ﻿using chat_service_se357.Models;
 using Microsoft.AspNetCore.Mvc;
+using static chat_service_se357.APIs.MyConversation;
+using static chat_service_se357.APIs.MyConversation.MsgDTO;
 
 namespace chat_service_se357.Controllers
 {
@@ -11,14 +13,16 @@ namespace chat_service_se357.Controllers
         [Route("/getListConversation")]
         public async Task<IActionResult> getListConversationAsync(string code) {
 
-            List<SqlConversation> conversations = await Program.api_conversation.getListConversationAsync(code);
-            if(conversations.Count == 0)
+            List<ConversationDTOResponse> conversations = await Program.api_conversation.getListConversationAsync(code);
+            if(conversations!=new List<ConversationDTOResponse>() )
             {
-                return BadRequest();
+                return Ok(conversations);
+
             }
             else
             {
-                return Ok(conversations);
+                return BadRequest();
+
             }
         }
     }
