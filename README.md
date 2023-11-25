@@ -1,4 +1,4 @@
-﻿# chat-service-se357
+
  
  luồng: client nhấn vào nút "Chat với shop" trong màn hình 
  client sẽ GỬI 2 lần api POST createUser gồm {ID user và name} của shop và của client đó để tạo record trong db của chat-service
