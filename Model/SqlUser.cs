@@ -9,13 +9,7 @@ namespace chat_service_se357.Models
         [Key]
         public long ID { get; set; }
         public string name { get; set; } = "";
-        public string avatar { get; set; } = ""; 
         public string code { get; set; }  // từ ID của user bên ecommerce migrate qua
-
         public bool is_shop { get; set; }=false;
-
-        //public string idHub { get; set; } = "";
-
-        //public List<SqlConversation>? conversations { get; set; } = new List<SqlConversation>();
     }
 }

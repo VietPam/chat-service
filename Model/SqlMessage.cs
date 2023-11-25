@@ -11,9 +11,7 @@ namespace chat_service_se357.Models
         public string senderCode { get; set; }
         public string receiverCode { get; set; }
         public long time { get; set; } = 0;
-        //public DateTime time { get; set; }
         public string message { get; set; } = "";
-
         public SqlConversation sqlConversation { get; set; }
 
     }

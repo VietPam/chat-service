@@ -28,21 +28,17 @@ namespace chat_service_se357.Controllers
 
         [HttpGet]
         [Route("/getListMsgInConvesation")]
-        public async Task<IActionResult> getListMsgInConvesation(long  conversationID)
+        public async Task<IActionResult> getListMsgInConvesation(string  ID_code)
         {
-
-            List<MsgDTO> messages = await Program.api_conversation.getListMsgInConvesation(conversationID);
+            List<MsgDTO> messages = await Program.api_conversation.getListMsgInConvesation(ID_code);
             if (messages != new List<MsgDTO>())
             {
                 return Ok(messages);
-
             }
             else
             {
                 return BadRequest();
-
             }
         }
-
     }
 }

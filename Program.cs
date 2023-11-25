@@ -62,7 +62,6 @@ namespace chat_service_se357
                 }
 
                 Log.Information(String.Format("Connected to Server {0} : {1} ", DateTime.Now, DataContext.configSql));
-
                 // Configure the HTTP request pipeline.
                 app.UseSwagger();
                 app.UseSwaggerUI();

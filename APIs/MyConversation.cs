@@ -17,12 +17,9 @@ namespace chat_service_se357.APIs
         }
         public class ConversationDTOResponse
         {
-            public long ConversationID { get; set; }
+            public string  ID_code { get; set; }
             public string their_name { get; set; }
-
             public MsgDTO msg { get; set; }
-            public string avatar { get; set; }
-            public long last_change { get; set; }
         }
         public async Task<bool> createConversation(string clientCode, string shopCode)
         {
@@ -47,7 +44,7 @@ namespace chat_service_se357.APIs
                 if (conversation == null)
                 {
                     SqlConversation tmp = new SqlConversation();
-                    tmp.ID = DateTime.Now.Ticks;
+                    tmp.ID_code = DataContext.randomString(64);
                     tmp.clientCode = clientCode;
                     tmp.shopCode = shopCode;
 
@@ -97,7 +94,7 @@ namespace chat_service_se357.APIs
                         msgDTO.msg = msg.message;
                         msgDTO.senderCode = msg.senderCode;
                         msgDTO.receiverCode = msg.receiverCode;
-
+                        msgDTO.time = msg.time;
                         //lấy ra thằng mà mình đang nhắn tin cùng
                         SqlUser? tmpUser = new SqlUser();
                         if (msg.senderCode == user.code)
@@ -110,30 +107,27 @@ namespace chat_service_se357.APIs
                         }
 
                         ConversationDTOResponse tmp = new ConversationDTOResponse();
-                        tmp.ConversationID = conversation.ID;
+                        tmp.ID_code = conversation.ID_code;
                         tmp.their_name = tmpUser.name;
-                        tmp.avatar = tmpUser.avatar;
                         tmp.msg = msgDTO;
-                        tmp.last_change = conversation.last_change;
                         response.Add(tmp);
                     }
-                    response.OrderBy(item => item.last_change);
+                    response.OrderBy(item => item.msg.time);
                     return response;
                 }
             }
         }
 
-        public async Task<List<MsgDTO>> getListMsgInConvesation(long conversationID)
+        public async Task<List<MsgDTO>> getListMsgInConvesation(string  ID_code)
         {
             List<MsgDTO> nullResponse = new List<MsgDTO>();
-            if (conversationID == null)
+            if (ID_code == null)
             {
                 return nullResponse;
             }
             using (DataContext context = new DataContext())
             {
-                List<SqlMessage>? listMsg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation.ID == conversationID).ToList();
-                //SqlConversation? conversation = context.conversations!.Where(s => s.ID == conversationID).FirstOrDefault();
+                List<SqlMessage>? listMsg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation.ID_code == ID_code).ToList();
                 List<MsgDTO> response = new List<MsgDTO>();
                 foreach (SqlMessage message in listMsg)
                 {
