@@ -16,7 +16,6 @@ namespace chat_service_se357.Models
 
         //public string idHub { get; set; } = "";
 
-
-        public List<SqlConversation>? conversations { get; set; } = new List<SqlConversation>();
+        //public List<SqlConversation>? conversations { get; set; } = new List<SqlConversation>();
     }
 }

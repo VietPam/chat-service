@@ -58,10 +58,11 @@ namespace chat_service_se357.APIs
                 message.senderCode = senderCode;
                 message.receiverCode = receiverCode;
                 message.message = msg;
-                message.conversations = sqlConversation;
+                //message.conversations = sqlConversation;
                 message.time = DateTime.Now.Ticks;
-                sqlConversation.last_change = DateTime.Now.Ticks;
+                message.sqlConversation = sqlConversation;
                 context.messages.Add(message);
+                //context.conversations.Add(sqlConversation);
                 //sqlConversation.messages.Add(message);
                 await context.SaveChangesAsync();
 

@@ -42,7 +42,8 @@ namespace chat_service_se357.APIs
                 SqlUser? sqlShop = context.users!.Where(s => s.code == shopCode).FirstOrDefault();
                 #endregion
 
-                SqlConversation? conversation = context.conversations!.Where(s => s.clientCode == clientCode && s.shopCode == shopCode).Include(s => s.users).FirstOrDefault();
+                if (sqlShop == null || sqlShop == null) { return false; }
+                SqlConversation? conversation = context.conversations!.Where(s => s.clientCode == clientCode && s.shopCode == shopCode).FirstOrDefault();
                 if (conversation == null)
                 {
                     SqlConversation tmp = new SqlConversation();
@@ -51,8 +52,6 @@ namespace chat_service_se357.APIs
                     tmp.shopCode = shopCode;
 
                     // thêm conversation vào user
-                    tmp.users.Add(sqlClient);
-                    tmp.users.Add(sqlShop);
                     context.conversations!.Add(tmp);
                     await context.SaveChangesAsync();
                     Log.Information("Create new conversation");
@@ -73,62 +72,57 @@ namespace chat_service_se357.APIs
                 }
                 using (DataContext context = new DataContext())
                 {
-                    SqlUser? user = context.users!.Include(s => s.conversations).ThenInclude(cvstion => cvstion.messages).Where(s => s.code == code).FirstOrDefault();
+                    SqlUser? user = context.users!.Where(s => s.code == code).FirstOrDefault();
                     if (user == null)
                     {
                         return null;
                     }
-                    //pha xử lý cồng kềnh bởi vì mình chưa hiểu sql quan hệ nhiều - nhiều
 
+                    List<SqlConversation>? list = new List<SqlConversation>();
+                    //lấy ra list conversation
                     if (user.is_shop)
                     {
-                        List<SqlConversation> conversations = user.conversations!;
-                        List<ConversationDTOResponse> response = new List<ConversationDTOResponse>();
-                        foreach (SqlConversation conversation in conversations)
-                        {
-                            SqlMessage msg = context.messages!.Include(s => s.conversations).Where(s => s.conversations == conversation).ToList().Last();
-                            MsgDTO msgDTO = new MsgDTO();
-
-                            msgDTO.msg = msg.message;
-                            msgDTO.senderCode = msg.senderCode;
-                            msgDTO.receiverCode = msg.receiverCode;
-                            if (msg.senderCode == user.code)
-                            {
-                                SqlUser? tmpUser = context.users!.Where(s => s.code == msg.receiverCode).FirstOrDefault();
-                                ConversationDTOResponse tmp = new ConversationDTOResponse();
-                                tmp.ConversationID = conversation.ID;
-                                tmp.their_name = tmpUser.name;
-                                tmp.avatar = tmpUser.avatar;
-                                tmp.msg = msgDTO;
-                                tmp.last_change = conversation.last_change;
-                                response.Add(tmp);
-                            }
-                            else if (msg.receiverCode == user.code)
-                            {
-                                SqlUser? tmpUser = context.users!.Where(s => s.code == msg.senderCode).FirstOrDefault();
-                                ConversationDTOResponse tmp = new ConversationDTOResponse();
-                                tmp.ConversationID = conversation.ID;
-                                tmp.their_name = tmpUser.name;
-                                tmp.avatar = tmpUser.avatar;
-                                tmp.msg = msgDTO;
-                                tmp.last_change = conversation.last_change;
-                                response.Add(tmp);
-                            }
-                        }
-                        response.OrderBy(item => item.last_change);
-                        return response;
-                        //response.ConversationID 
+                        list = context.conversations.Where(s => s.shopCode == code).ToList();
                     }
                     else
                     {
-                        //List<SqlConversation> conversations = context.conversations!.Where(s => s.clientCode== code).ToList();
-                        //return conversations;
+                        list = context.conversations.Where(s => s.clientCode == code).ToList();
                     }
-                }
-                return new List<ConversationDTOResponse>();
+                    List<ConversationDTOResponse> response = new List<ConversationDTOResponse>();
+                    foreach (SqlConversation conversation in list)
+                    {
+                        SqlMessage msg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation == conversation).ToList().Last();
+                        MsgDTO msgDTO = new MsgDTO();
 
+                        msgDTO.msg = msg.message;
+                        msgDTO.senderCode = msg.senderCode;
+                        msgDTO.receiverCode = msg.receiverCode;
+
+                        //lấy ra thằng mà mình đang nhắn tin cùng
+                        SqlUser? tmpUser = new SqlUser();
+                        if (msg.senderCode == user.code)
+                        {
+                            tmpUser = context.users!.Where(s => s.code == msg.receiverCode).FirstOrDefault();
+                        }
+                        else
+                        {
+                            tmpUser = context.users!.Where(s => s.code == msg.senderCode).FirstOrDefault();
+                        }
+
+                        ConversationDTOResponse tmp = new ConversationDTOResponse();
+                        tmp.ConversationID = conversation.ID;
+                        tmp.their_name = tmpUser.name;
+                        tmp.avatar = tmpUser.avatar;
+                        tmp.msg = msgDTO;
+                        tmp.last_change = conversation.last_change;
+                        response.Add(tmp);
+                    }
+                    response.OrderBy(item => item.last_change);
+                    return response;
+                }
             }
         }
+
         public async Task<List<MsgDTO>> getListMsgInConvesation(long conversationID)
         {
             List<MsgDTO> nullResponse = new List<MsgDTO>();
@@ -138,10 +132,10 @@ namespace chat_service_se357.APIs
             }
             using (DataContext context = new DataContext())
             {
-                SqlConversation? conversation = context.conversations!.Include(s => s.messages).Where(s => s.ID == conversationID).FirstOrDefault();
-                List<SqlMessage> messages = conversation.messages;
+                List<SqlMessage>? listMsg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation.ID == conversationID).ToList();
+                //SqlConversation? conversation = context.conversations!.Where(s => s.ID == conversationID).FirstOrDefault();
                 List<MsgDTO> response = new List<MsgDTO>();
-                foreach (SqlMessage message in messages)
+                foreach (SqlMessage message in listMsg)
                 {
                     MsgDTO msg = new MsgDTO();
                     msg.time = message.time;
