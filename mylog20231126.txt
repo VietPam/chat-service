@@ -1,0 +1,1 @@
+2023-11-26 19:36:08.072 +07:00 [INF] Connected to Server 26/11/2023 7:36:08 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
