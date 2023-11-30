@@ -1,5 +1,6 @@
 ﻿using chat_service_se357.Models;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using System.Net.Sockets;
 
 namespace chat_service_se357.APIs
@@ -33,5 +34,50 @@ namespace chat_service_se357.APIs
             }
         }
 
+        public async Task<bool> disConnectUserAsync(string id)
+        {
+            using (DataContext context = new DataContext() )
+            {
+                try
+                {
+                    SqlUser? user = context.users.Where(s => s.IdHub.CompareTo(id) == 0).FirstOrDefault();
+                    if (user == null)
+                    {
+                        return false;
+                    }
+
+                    user.IdHub = "";
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return false;
+                }
+            }
+        }
+        public async Task<bool> updateUserAsync(string idHub, string code)
+        {
+            using (DataContext context = new DataContext())
+            {
+                try
+                {
+                    SqlUser user = context.users.Where(s => s.code.CompareTo(code) == 0).FirstOrDefault();
+                    if (user == null)
+                    {
+                        return false;
+                    }
+                    user.IdHub = idHub;
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return false;
+                }
+            }
+        }
     }
 }

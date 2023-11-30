@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Serilog.Sinks.SystemConsole.Themes;
 using Serilog;
 using chat_service_se357.APIs;
+using Microsoft.AspNetCore.SignalR;
+using chat_service_se357.Hubs;
+using Microsoft.AspNetCore.Http.Connections;
 
 namespace chat_service_se357
 {
@@ -11,6 +14,7 @@ namespace chat_service_se357
         public static MyUser api_user = new MyUser();
         public static MyConversation api_conversation = new MyConversation();
         public static MyMessage api_message = new MyMessage();
+        public static IHubContext<ChatHub>? chatHub;
         public static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
@@ -42,6 +46,13 @@ namespace chat_service_se357
                         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin => true).WithExposedHeaders("Grpc-Status", "Grpc-Encoding", "Grpc-Accept-Encoding");
                     });
                 });
+                builder.Services.AddSignalR(options =>
+                {
+                    options.EnableDetailedErrors = true;
+                    options.KeepAliveInterval = TimeSpan.FromSeconds(5);
+                    options.MaximumReceiveMessageSize = 10 * 1024 * 1024;
+                    options.StreamBufferCapacity = 10 * 1024 * 1024;
+                }).AddMessagePackProtocol();
 
                 builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(DataContext.configSql));
                 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -72,6 +83,16 @@ namespace chat_service_se357
                 app.UseRouting();
 
                 app.UseAuthorization();
+
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapHub<ChatHub>("/chatHub", options =>
+                    {
+                        options.Transports = HttpTransportType.WebSockets;
+                    });
+                });
+
+                chatHub = (IHubContext<ChatHub>?)app.Services.GetService(typeof(IHubContext<ChatHub>));
 
 
                 app.MapControllers();

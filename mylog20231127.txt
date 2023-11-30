@@ -1,0 +1,9 @@
+2023-11-27 14:11:05.199 +07:00 [INF] Connected to Server 27/11/2023 2:11:05 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-27 14:11:27.394 +07:00 [INF] Connected to Server 27/11/2023 2:11:27 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-27 14:13:19.606 +07:00 [INF] Connected to Server 27/11/2023 2:13:19 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-27 20:14:13.781 +07:00 [INF] Connected to Server 27/11/2023 8:14:13 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-27 20:19:23.887 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-11-27 20:19:23.895 +07:00 [INF] ID client: 638367130317458320, name:QuangViet
+2023-11-27 20:19:24.216 +07:00 [INF] Create new conversation
+2023-11-27 20:24:47.838 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-11-27 20:24:47.838 +07:00 [INF] ID client: 638367130317458320, name:QuangViet

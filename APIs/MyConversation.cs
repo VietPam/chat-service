@@ -1,5 +1,6 @@
 ﻿using chat_service_se357.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Serilog;
 
 namespace chat_service_se357.APIs
@@ -17,7 +18,7 @@ namespace chat_service_se357.APIs
         }
         public class ConversationDTOResponse
         {
-            public string  ID_code { get; set; }
+            public string ID_code { get; set; }
             public string their_name { get; set; }
             public MsgDTO msg { get; set; }
         }
@@ -62,63 +63,61 @@ namespace chat_service_se357.APIs
 
         public async Task<List<ConversationDTOResponse>> getListConversationAsync(string code)
         {
+            if (string.IsNullOrEmpty(code))
             {
-                if (string.IsNullOrEmpty(code))
+                return null;
+            }
+            using (DataContext context = new DataContext())
+            {
+                SqlUser? user = context.users!.Where(s => s.code == code).FirstOrDefault();
+                if (user == null)
                 {
                     return null;
                 }
-                using (DataContext context = new DataContext())
-                {
-                    SqlUser? user = context.users!.Where(s => s.code == code).FirstOrDefault();
-                    if (user == null)
-                    {
-                        return null;
-                    }
 
-                    List<SqlConversation>? list = new List<SqlConversation>();
-                    //lấy ra list conversation
-                    if (user.is_shop)
+                List<SqlConversation>? list = new List<SqlConversation>();
+                //lấy ra list conversation
+                if (user.is_shop)
+                {
+                    list = context.conversations.Where(s => s.shopCode == code).ToList();
+                }
+                else
+                {
+                    list = context.conversations.Where(s => s.clientCode == code).ToList();
+                }
+                List<ConversationDTOResponse> response = new List<ConversationDTOResponse>();
+                foreach (SqlConversation conversation in list)
+                {
+                    SqlMessage msg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation == conversation).ToList().Last();
+                    MsgDTO msgDTO = new MsgDTO();
+
+                    msgDTO.msg = msg.message;
+                    msgDTO.senderCode = msg.senderCode;
+                    msgDTO.receiverCode = msg.receiverCode;
+                    msgDTO.time = msg.time;
+                    //lấy ra thằng mà mình đang nhắn tin cùng
+                    SqlUser? tmpUser = new SqlUser();
+                    if (msg.senderCode == user.code)
                     {
-                        list = context.conversations.Where(s => s.shopCode == code).ToList();
+                        tmpUser = context.users!.Where(s => s.code == msg.receiverCode).FirstOrDefault();
                     }
                     else
                     {
-                        list = context.conversations.Where(s => s.clientCode == code).ToList();
+                        tmpUser = context.users!.Where(s => s.code == msg.senderCode).FirstOrDefault();
                     }
-                    List<ConversationDTOResponse> response = new List<ConversationDTOResponse>();
-                    foreach (SqlConversation conversation in list)
-                    {
-                        SqlMessage msg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation == conversation).ToList().Last();
-                        MsgDTO msgDTO = new MsgDTO();
 
-                        msgDTO.msg = msg.message;
-                        msgDTO.senderCode = msg.senderCode;
-                        msgDTO.receiverCode = msg.receiverCode;
-                        msgDTO.time = msg.time;
-                        //lấy ra thằng mà mình đang nhắn tin cùng
-                        SqlUser? tmpUser = new SqlUser();
-                        if (msg.senderCode == user.code)
-                        {
-                            tmpUser = context.users!.Where(s => s.code == msg.receiverCode).FirstOrDefault();
-                        }
-                        else
-                        {
-                            tmpUser = context.users!.Where(s => s.code == msg.senderCode).FirstOrDefault();
-                        }
-
-                        ConversationDTOResponse tmp = new ConversationDTOResponse();
-                        tmp.ID_code = conversation.ID_code;
-                        tmp.their_name = tmpUser.name;
-                        tmp.msg = msgDTO;
-                        response.Add(tmp);
-                    }
-                    response.OrderBy(item => item.msg.time);
-                    return response;
+                    ConversationDTOResponse tmp = new ConversationDTOResponse();
+                    tmp.ID_code = conversation.ID_code;
+                    tmp.their_name = tmpUser.name;
+                    tmp.msg = msgDTO;
+                    response.Add(tmp);
                 }
+                response.OrderBy(item => item.msg.time);
+                return response;
             }
         }
 
-        public async Task<List<MsgDTO>> getListMsgInConvesation(string  ID_code)
+        public async Task<List<MsgDTO>> getListMsgInConvesation(string ID_code)
         {
             List<MsgDTO> nullResponse = new List<MsgDTO>();
             if (ID_code == null)
@@ -143,6 +142,73 @@ namespace chat_service_se357.APIs
             }
 
             return nullResponse;
+        }
+
+
+        public bool getListConversationSignaR(string id_hub)
+        {
+            if (string.IsNullOrEmpty(id_hub))
+            {
+                return false;
+            }
+            using (DataContext context = new DataContext())
+            {
+                SqlUser? user = context.users!.Where(s => s.IdHub == id_hub).FirstOrDefault();
+                if (user == null)
+                {
+                    return false;
+                }
+
+                List<SqlConversation>? list = new List<SqlConversation>();
+                if (user.is_shop)
+                {
+                    list = context.conversations!.Where(s => s.shopCode == user.code).ToList();
+                }
+                else
+                {
+                    list = context.conversations!.Where(s => s.clientCode == user.code).ToList();
+                }
+                List<ConversationDTOResponse> response = new List<ConversationDTOResponse>();
+                foreach (SqlConversation conversation in list)
+                {
+                    SqlMessage msg = context.messages!.Include(s => s.sqlConversation).Where(s => s.sqlConversation == conversation).ToList().Last();
+                    MsgDTO msgDTO = new MsgDTO();
+
+                    msgDTO.msg = msg.message;
+                    msgDTO.senderCode = msg.senderCode;
+                    msgDTO.receiverCode = msg.receiverCode;
+                    msgDTO.time = msg.time;
+                    //lấy ra thằng mà mình đang nhắn tin cùng
+                    SqlUser? tmpUser = new SqlUser();
+                    if (msg.senderCode == user.code)
+                    {
+                        tmpUser = context.users!.Where(s => s.code == msg.receiverCode).FirstOrDefault();
+                    }
+                    else
+                    {
+                        tmpUser = context.users!.Where(s => s.code == msg.senderCode).FirstOrDefault();
+                    }
+
+                    ConversationDTOResponse tmp = new ConversationDTOResponse();
+                    tmp.ID_code = conversation.ID_code;
+                    tmp.their_name = tmpUser.name;
+                    tmp.msg = msgDTO;
+                    response.Add(tmp);
+                }
+                response.OrderBy(item => item.msg.time);
+                try
+                {
+                    string data = JsonConvert.SerializeObject(response);
+                    Program.chatHub?.Clients.Client(user.IdHub).SendCoreAsync("GetListConversation", new object[] { data });
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex.Message);
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

@@ -1,0 +1,16 @@
+2023-11-30 15:22:24.079 +07:00 [INF] Connected to Server 30/11/2023 3:22:24 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:46:44.455 +07:00 [INF] Connected to Server 30/11/2023 4:46:44 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:48:37.712 +07:00 [INF] Connected to Server 30/11/2023 4:48:37 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:48:37.808 +07:00 [ERR] Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddSignalR' inside the call to 'ConfigureServices(...)' in the application startup code.
+2023-11-30 16:49:03.252 +07:00 [INF] Connected to Server 30/11/2023 4:49:03 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:49:03.352 +07:00 [ERR] Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddSignalR' inside the call to 'ConfigureServices(...)' in the application startup code.
+2023-11-30 16:49:52.942 +07:00 [INF] Connected to Server 30/11/2023 4:49:52 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:52:03.061 +07:00 [INF] Connected to Server 30/11/2023 4:52:03 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:54:00.736 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-30 16:54:09.648 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-11-30 16:54:21.238 +07:00 [INF] Connected to Server 30/11/2023 4:54:21 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:54:51.471 +07:00 [INF] Connected to Server 30/11/2023 4:54:51 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:56:09.893 +07:00 [INF] Connected to Server 30/11/2023 4:56:09 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:56:26.968 +07:00 [INF] Connected to Server 30/11/2023 4:56:26 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:58:17.925 +07:00 [INF] Connected to Server 30/11/2023 4:58:17 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-11-30 16:58:38.509 +07:00 [INF] User: new connection gh6zJp3sHPByBy0klS_-mg
