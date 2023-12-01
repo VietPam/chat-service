@@ -66,11 +66,18 @@ namespace chat_service_se357.APIs
                 //sqlConversation.messages.Add(message);
                 await context.SaveChangesAsync();
 
+                Program.api_conversation.getListConversationSignaR(shop.IdHub);
+                Program.api_conversation.getListConversationSignaR(client.IdHub);
+
+            //gọi hàm gửi list conversation cho user
                 return true;
 
                 #endregion
 
             }
+
+
+
         }
 
         

@@ -1,0 +1,53 @@
+2023-12-01 13:14:54.244 +07:00 [INF] Connected to Server 01/12/2023 1:14:54 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:17:14.296 +07:00 [INF] Connected to Server 01/12/2023 1:17:14 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:17:43.185 +07:00 [INF] User: new connection ZioY7Kz5TrooM00lzVYoUg
+2023-12-01 13:18:20.150 +07:00 [INF] Reconnect ok
+2023-12-01 13:18:47.795 +07:00 [INF] Send message ok
+2023-12-01 13:19:51.520 +07:00 [INF] ID shop: 638365055924803817, name: shop
+2023-12-01 13:19:51.528 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:25:53.358 +07:00 [INF] Connected to Server 01/12/2023 1:25:53 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:26:46.286 +07:00 [INF] User: new connection 4SZ2fIAvSGc2H8-kEleLhA
+2023-12-01 13:26:47.332 +07:00 [INF] Reconnect fail
+2023-12-01 13:26:47.414 +07:00 [INF] Reconnect fail
+2023-12-01 13:26:55.339 +07:00 [INF] Reconnect fail
+2023-12-01 13:27:05.685 +07:00 [INF] Reconnect ok
+2023-12-01 13:27:12.810 +07:00 [INF] Send message ok
+2023-12-01 13:27:27.761 +07:00 [INF] ID shop: 638365055924803817, name: shop
+2023-12-01 13:27:27.769 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:28:14.378 +07:00 [INF] User: new connection zmvUU1I-pDXuVg2K_VxG9g
+2023-12-01 13:28:14.385 +07:00 [INF] User: remove client 4SZ2fIAvSGc2H8-kEleLhA
+2023-12-01 13:29:13.566 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-12-01 13:29:13.566 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:29:13.911 +07:00 [INF] Create new conversation
+2023-12-01 13:30:48.055 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-12-01 13:30:48.055 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:31:16.428 +07:00 [INF] Send message fail
+2023-12-01 13:31:21.721 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-12-01 13:31:21.721 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:32:01.709 +07:00 [INF] User: new connection CbswQVIObGe9EDFEkDmKww
+2023-12-01 13:32:02.754 +07:00 [INF] User: remove client zmvUU1I-pDXuVg2K_VxG9g
+2023-12-01 13:32:19.090 +07:00 [INF] User: remove client CbswQVIObGe9EDFEkDmKww
+2023-12-01 13:32:30.841 +07:00 [INF] User: new connection wwewLo7i89tAVrZ8t6693Q
+2023-12-01 13:32:36.895 +07:00 [INF] Reconnect ok
+2023-12-01 13:33:02.940 +07:00 [INF] Send message ok
+2023-12-01 13:33:28.129 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-12-01 13:33:28.129 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:33:46.424 +07:00 [INF] ID shop: 638367130079672108, name: Bitis
+2023-12-01 13:33:46.424 +07:00 [INF] ID client: 638365055113516216, name:client
+2023-12-01 13:47:57.071 +07:00 [INF] Connected to Server 01/12/2023 1:47:57 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:53:55.774 +07:00 [INF] Connected to Server 01/12/2023 1:53:55 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:54:21.183 +07:00 [INF] Connected to Server 01/12/2023 1:54:21 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:55:57.889 +07:00 [INF] Connected to Server 01/12/2023 1:55:57 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 13:57:46.561 +07:00 [INF] Connected to Server 01/12/2023 1:57:46 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:00:30.064 +07:00 [INF] Connected to Server 01/12/2023 2:00:30 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:01:05.286 +07:00 [INF] Connected to Server 01/12/2023 2:01:05 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:02:39.485 +07:00 [INF] Connected to Server 01/12/2023 2:02:39 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:02:48.976 +07:00 [INF] User: new connection SV3Zu1RISp49xIGlLGNSgg
+2023-12-01 14:02:53.946 +07:00 [INF] Reconnect ok
+2023-12-01 14:02:54.464 +07:00 [INF] Send message ok
+2023-12-01 14:03:10.524 +07:00 [INF] User: new connection 4CHPMSnKy5v5QXUmaikOjA
+2023-12-01 14:03:16.909 +07:00 [INF] Reconnect ok
+2023-12-01 14:03:18.688 +07:00 [INF] Send message ok
+2023-12-01 14:04:01.992 +07:00 [INF] ID shop: 638365055924803817, name: shop
+2023-12-01 14:04:02.000 +07:00 [INF] ID client: 638367130317458320, name:QuangViet
+2023-12-01 14:04:02.401 +07:00 [INF] Create new conversation

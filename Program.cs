@@ -6,6 +6,7 @@ using chat_service_se357.APIs;
 using Microsoft.AspNetCore.SignalR;
 using chat_service_se357.Hubs;
 using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.AspNetCore.Cors;
 
 namespace chat_service_se357
 {
@@ -24,21 +25,23 @@ namespace chat_service_se357
                    .CreateLogger();
             try
             {
-
+                
                 var builder = WebApplication.CreateBuilder(args);
-                builder.WebHost.ConfigureKestrel((context, option) =>
+                builder.Services.AddCors(options =>
                 {
-                    option.ListenAnyIP(50000, listenOptions =>
+                    options.AddDefaultPolicy(builder =>
                     {
-                        // listenOptions.UseHttps("./smartlook.com.vn.pfx", "stvg");
-
+                        builder.WithOrigins("http://localhost:3000")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                        builder.WithOrigins("https://demo-signalr-reactjs.vercel.app")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
                     });
-                    option.Limits.MaxConcurrentConnections = null;
-                    option.Limits.MaxRequestBodySize = null;
-                    option.Limits.MaxRequestBufferSize = null;
                 });
-                // Add services to the container.
-                //builder.Logging.AddSerilog();
+                
                 builder.Services.AddCors(options =>
                 {
                     options.AddPolicy("HTTPSystem", builder =>
@@ -79,7 +82,8 @@ namespace chat_service_se357
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
 
-                app.UseCors("HTTPSystem");
+                //app.UseCors("HTTPSystem");
+                app.UseCors();
                 app.UseRouting();
 
                 app.UseAuthorization();
