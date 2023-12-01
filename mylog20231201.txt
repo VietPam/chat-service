@@ -51,3 +51,55 @@
 2023-12-01 14:04:01.992 +07:00 [INF] ID shop: 638365055924803817, name: shop
 2023-12-01 14:04:02.000 +07:00 [INF] ID client: 638367130317458320, name:QuangViet
 2023-12-01 14:04:02.401 +07:00 [INF] Create new conversation
+2023-12-01 14:08:10.132 +07:00 [INF] Connected to Server 01/12/2023 2:08:10 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:08:17.778 +07:00 [INF] User: new connection oM_HOWZjixnnJUP9dSGhaQ
+2023-12-01 14:08:18.500 +07:00 [INF] Reconnect ok
+2023-12-01 14:08:18.991 +07:00 [INF] Send message ok
+2023-12-01 14:08:25.678 +07:00 [INF] User: new connection 6TXmgr1baMOV2Gwdd9aYPA
+2023-12-01 14:08:25.832 +07:00 [INF] Reconnect ok
+2023-12-01 14:08:26.169 +07:00 [INF] Send message ok
+2023-12-01 14:08:57.789 +07:00 [INF] ID shop: 638365055924803817, name: shop
+2023-12-01 14:08:57.798 +07:00 [INF] ID client: 638367130317458320, name:QuangViet
+2023-12-01 14:09:55.807 +07:00 [INF] User: new connection pLQsRsRQ5ailPbtNPg438A
+2023-12-01 14:09:55.964 +07:00 [INF] Reconnect ok
+2023-12-01 14:09:56.247 +07:00 [INF] Send message ok
+2023-12-01 14:19:13.304 +07:00 [INF] Connected to Server 01/12/2023 2:19:13 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:19:42.295 +07:00 [INF] Connected to Server 01/12/2023 2:19:42 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:19:52.759 +07:00 [INF] User: new connection tOuEaPDKiGAtVQkB8XzCvA
+2023-12-01 14:19:52.759 +07:00 [INF] User: new connection vDvAr8-_2DKxCUrj1Ar4Qw
+2023-12-01 14:19:52.765 +07:00 [INF] User: new connection h0pbPKXqVixUlPRYCscAKw
+2023-12-01 14:20:15.638 +07:00 [INF] User: new connection Bhjwomx5z8bKS1yD71yk_A
+2023-12-01 14:20:16.123 +07:00 [INF] Reconnect ok
+2023-12-01 14:20:16.414 +07:00 [INF] Send message ok
+2023-12-01 14:20:21.966 +07:00 [INF] User: new connection gzFB0fQsur-pQHQ9q4QXoQ
+2023-12-01 14:20:22.142 +07:00 [INF] Reconnect ok
+2023-12-01 14:20:22.247 +07:00 [INF] Send message ok
+2023-12-01 14:21:09.099 +07:00 [INF] User: new connection UAgGLG648P3ktbeuaGeCHA
+2023-12-01 14:21:09.263 +07:00 [INF] Reconnect ok
+2023-12-01 14:21:09.388 +07:00 [INF] Send message ok
+2023-12-01 14:21:10.462 +07:00 [INF] User: new connection BMcJ0du1Cn1K8VEXalYMWQ
+2023-12-01 14:21:10.713 +07:00 [INF] Reconnect ok
+2023-12-01 14:21:10.810 +07:00 [INF] Send message ok
+2023-12-01 14:21:24.891 +07:00 [INF] ID shop: 638370371935330960, name: shop
+2023-12-01 14:21:24.899 +07:00 [INF] ID client: 638370372018455713, name:client
+2023-12-01 14:21:25.299 +07:00 [INF] Create new conversation
+2023-12-01 14:21:34.786 +07:00 [INF] ID shop: 638370371935330960, name: shop
+2023-12-01 14:21:34.786 +07:00 [INF] ID client: 638370372018455713, name:client
+2023-12-01 14:22:47.641 +07:00 [INF] ID shop: 638370371935330960, name: shop
+2023-12-01 14:22:47.641 +07:00 [INF] ID client: 638370373143644755, name:client1
+2023-12-01 14:22:48.035 +07:00 [INF] Create new conversation
+2023-12-01 14:23:08.114 +07:00 [INF] ID shop: 638370373067022947, name: shop1
+2023-12-01 14:23:08.114 +07:00 [INF] ID client: 638370372018455713, name:client
+2023-12-01 14:23:08.585 +07:00 [INF] Create new conversation
+2023-12-01 14:25:13.941 +07:00 [INF] Connected to Server 01/12/2023 2:25:13 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:25:51.167 +07:00 [INF] Connected to Server 01/12/2023 2:25:51 CH : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-01 14:26:03.981 +07:00 [INF] User: new connection kxymcGBtuEPnYt2sIZrOOA
+2023-12-01 14:26:04.709 +07:00 [INF] Reconnect ok
+2023-12-01 14:26:05.302 +07:00 [INF] Send message ok
+2023-12-01 14:26:05.989 +07:00 [INF] User: new connection PxpqCBoznUXzgmss-Nzg5Q
+2023-12-01 14:26:06.148 +07:00 [INF] Reconnect ok
+2023-12-01 14:26:06.488 +07:00 [INF] Send message ok
+2023-12-01 14:26:24.860 +07:00 [INF] ID shop: 638370373067022947, name: shop1
+2023-12-01 14:26:24.868 +07:00 [INF] ID client: 638370372018455713, name:client
+2023-12-01 14:26:38.257 +07:00 [INF] ID shop: 638370371935330960, name: shop
+2023-12-01 14:26:38.257 +07:00 [INF] ID client: 638370372018455713, name:client

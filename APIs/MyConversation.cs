@@ -195,7 +195,7 @@ namespace chat_service_se357.APIs
                     tmp.msg = msgDTO;
                     response.Add(tmp);
                 }
-                response.OrderBy(item => item.msg.time);
+                response = response.OrderByDescending(item => item.msg.time).ToList();
                 try
                 {
                     string data = JsonConvert.SerializeObject(response);
