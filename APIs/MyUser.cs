@@ -34,6 +34,25 @@ namespace chat_service_se357.APIs
             }
         }
 
+        public async Task<List<Response_User>> getListUserAsync()
+        {
+            List<Response_User> response = new List<Response_User>();
+            using (DataContext context = new DataContext())
+            {
+                List<SqlUser> list = context.users!.ToList();
+                foreach (SqlUser user in list)
+                {
+                    Response_User item = new Response_User();
+                    item.code = user.code;
+                    item.name = user.name;
+                    item.is_shop = user.is_shop;
+                    response.Add(item);
+                }
+            }
+            return response;
+        }
+
+
         public async Task<bool> disConnectUserAsync(string id)
         {
             using (DataContext context = new DataContext() )

@@ -8,3 +8,5 @@
 2023-12-05 15:16:19.139 +07:00 [INF] ID shop: 638373861482107097, name: viet
 2023-12-05 15:16:19.147 +07:00 [INF] ID client: 638373861665099998, name:client
 2023-12-05 15:16:19.689 +07:00 [INF] Create new conversation
+2023-12-05 21:42:17.158 +07:00 [INF] Connected to Server 05/12/2023 9:42:17 CH : Host=dpg-clmjgh1fb9qs739ei400-a.singapore-postgres.render.com:5432;Database=chat-anh-nam;Username=render_qpgv_user;Password=ZzJFYUY09io21A7O7iMESUH2kcaqlbGF 
+2023-12-05 21:42:44.924 +07:00 [INF] Connected to Server 05/12/2023 9:42:44 CH : Host=dpg-clmjgh1fb9qs739ei400-a.singapore-postgres.render.com:5432;Database=chat-anh-nam;Username=render_qpgv_user;Password=ZzJFYUY09io21A7O7iMESUH2kcaqlbGF 

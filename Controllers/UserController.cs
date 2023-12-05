@@ -20,5 +20,12 @@ namespace chat_service_se357.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet]
+        [Route("getListUser")]
+        public async Task<IActionResult> getListUserAsync()
+        {
+            return Ok( await Program.api_user.getListUserAsync());
+        }
     }
 }

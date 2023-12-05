@@ -14,4 +14,10 @@ namespace chat_service_se357.Models
 
         public string IdHub { get; set; } = "";
     }
+    public class Response_User
+    {
+        public string name { get; set; } = "";
+        public string code { get; set; }  // từ ID của user bên ecommerce migrate qua
+        public bool is_shop { get; set; } = false;
+    }
 }
