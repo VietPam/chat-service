@@ -1,0 +1,10 @@
+2023-12-05 15:13:11.690 +07:00 [ERR] 42P07: relation "tb_user" already exists
+2023-12-05 15:13:51.294 +07:00 [ERR] 42P07: relation "tb_conversation" already exists
+2023-12-05 15:14:13.732 +07:00 [ERR] 42P07: relation "tb_conversation" already exists
+2023-12-05 15:14:47.205 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-12-05 15:14:50.421 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-12-05 15:14:58.433 +07:00 [ERR] Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+2023-12-05 15:15:21.845 +07:00 [INF] Connected to Server 05/12/2023 3:15:21 CH : Host=dpg-clmjgh1fb9qs739ei400-a.singapore-postgres.render.com:5432;Database=chat-anh-nam;Username=render_qpgv_user;Password=ZzJFYUY09io21A7O7iMESUH2kcaqlbGF 
+2023-12-05 15:16:19.139 +07:00 [INF] ID shop: 638373861482107097, name: viet
+2023-12-05 15:16:19.147 +07:00 [INF] ID client: 638373861665099998, name:client
+2023-12-05 15:16:19.689 +07:00 [INF] Create new conversation

@@ -1,0 +1,9 @@
+2023-12-02 08:11:09.464 +07:00 [INF] Connected to Server 02/12/2023 8:11:09 SA : Host=ep-silent-hill-65750190.ap-southeast-1.postgres.vercel-storage.com:5432;Database=verceldb;Username=default;Password=8isowjIMlJG4 
+2023-12-02 08:11:23.927 +07:00 [INF] User: new connection Rd-HZW8u-0xnV4i9f6njUA
+2023-12-02 08:11:24.835 +07:00 [INF] Reconnect ok
+2023-12-02 08:11:26.237 +07:00 [INF] Send message ok
+2023-12-02 08:11:33.863 +07:00 [INF] User: new connection lxisJzgvYSSVQK-Sz7LAFg
+2023-12-02 08:11:34.028 +07:00 [INF] Reconnect ok
+2023-12-02 08:11:34.325 +07:00 [INF] Send message ok
+2023-12-02 08:12:01.517 +07:00 [INF] User: remove client lxisJzgvYSSVQK-Sz7LAFg
+2023-12-02 08:12:01.517 +07:00 [INF] User: remove client Rd-HZW8u-0xnV4i9f6njUA

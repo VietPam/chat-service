@@ -100,7 +100,7 @@ namespace chat_service_se357
 
 
                 app.MapControllers();
-                app.MapGet("/", () => string.Format("Server Chat of SE347- {0}", DateTime.Now));
+                app.MapGet("/", () => string.Format("Server Chat at - {0}", DateTime.Now));
 
                 app.Run();
 
